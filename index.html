@@ -17,10 +17,10 @@
       }
       table {
         border-collapse: collapse;
-        border: 1px solid green;
+        border: 3px solid green;
         margin: 10 auto;
-        margin-top:10px;
-        margin-bottom: 10px;
+        margin-top:50px;
+        margin-bottom: 100px;
       }
       td {
         padding: 6px;
@@ -35,75 +35,106 @@
         font-size: 1.5em;
         font-family: monospace;
       }
+      h4 {
+        color: rgb(250, 250, 250);
+        font-size: 1.3em;
+        font-family: monospace;
+      }
       p {
         color: rgb(250, 250, 250);
         font-size: 1em;
         font-family: monospace;
       }
+      .button {
+  display: inline-block;
+  background-color: rgb(33, 150, 156);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+#dropdown-menu {
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: rgb(78, 219, 72);
+  width: 200px;
+}
+
+#dropdown-menu option {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(37, 203, 206);
+}
+
 
     </style>
   </head>
   <body>
-    <img src="resources/1.png" height="200" width="400"> 
+    
     <table>
       <tr>
         <td>
+          <img src="resources/1.png" height="200" width="400" class="center"> 
           <h1>Online Behavioral Targeting, the Data Story</h1>
           <h2>By Julia Fernandes Vidal</h2>
           <h3>The Introduction</h3>
           <br>
           <h3>What is OBT?</h3>
-          <p>Online Behavioral Targeting has completely revolutionalized modern marketing. With it, organizations can optimize their targeting strategies by tracking users’ online behavior and, with the data gathered, provide them with highly relevant and personalized content. However, with broad access to users’ private data, OBT can also pose serious threats, such as the exploitations of vulnerabilities and privacy concerns.</p>
+          <p>Online Behavioral Targeting has completely revolutionalized modern marketing. With it, organizations can optimize their targeting strategies by tracking users online behavior and, with the data gathered, provide them with highly relevant and personalized content. However, with broad access to users’ private data, OBT can also pose serious threats, such as the exploitations of vulnerabilities and privacy concerns.</p>
+          <br>
+          <h3>What is the problem?</h3>
+          <h4>The Information Asymmetry</h4>
+          <p>Such unintended effects of OBT become especially salient when users are not aware of how their data is being used. Of course, this knowledge is almost impossible to have in the fist place as very few transparency mechanisms are currently in place. This lack of knowledge creates a large power imbalance, where large multinationals have all the cards, and users have little to no knowledge on how this data can, and will, be used agaisnt them. In fact, users are so oblivious to OBT workings that they often cannot distinguish when they have (even if unintentionally) provided the algorithm with information or when it is so attuned to their inner thoughts that it can actually accurately predict a hidden interest. With this, users even come up with theories and folk stories that 'apps eavesdrop on their conversations'.</p>
+          <h4>Echo Chambers & Polarization</h4>
+          <p>This information asymmetry is a lot more harmful than it might look at first glance, as algorithms (and the companies running them) have, with access to all this private data, the power to filter what we see and what we do not see. To keep users online the longest (so more information can tracked, processes, and consequently, sold), algorithms prioritize engagement over accuracy when tagreting content, which increases the likelihood of the spread of misinformation and clickbaits. With this, different users not only see different things, but see more and more of the same, creating an echo chamber effect. With this, we see a society that is increasingly misinformed and polarized, unable to agree on things as we are not even exposed to the same truth.</p>
           <br>
           <h3>The study</h3>
-          <p>The experiment conducted by Julia Fernandes Vidal investigates the effect that transparency mechanisms have on how user's feel towards the OBT process. This Data Story will walk you through the main findings.</p>
+          <p>This experiment was conduced by me, Julia, as part of my bachelor thesis for the University of Amsterdam in 2022. In it, I investigated the effect that transparency mechanisms have on how user's feel towards the OBT process. This Data Story will walk you through the main findings.</p>
           <br>
           <h2>Ready? Let's go!</h2>
         </td>
       </tr>
     </table>
-  <img src="resources/4.png" height="200" width="400" class="center">
+  
     <table>
       <tr>
         <td>
+          <img src="resources/4.png" height="200" width="400" class="center">
           <h1>The Central Question</h1>
           <h2>What is the effect of transparency mechanisms on user's attitudes towards OBT, and to what extent is this effect mediated by the user's perceived control over their own personal data?</h2>
         </td>
       </tr>
     </table>
-    <img src="resources/6.png" height="200" width="400" class="center">
+    
     <table>
       <tr>
         <td>
+          <img src="resources/6.png" height="200" width="400" class="center">
           <h1>Study Demogaphics</h1>
           <h2>Who are we investigating?</h2>
 
           <h3>The Sample</h3>
-          <p>The study recruited, with non-probbaility sampling, participants via an online questionnaire. Below you can see different characteristics of this sample, including age, schooling, nationality, and gender. Click on the button you want to see to visualize the corresponding graphs. </p>
-          <br>
-          <button>Age Distribution</button> 
-          <a href="DataStory.html">Bar Chart</a>
+          <p>The study recruited, with non-probbaility sampling, participants via an online questionnaire. Below you can see different characteristics of this sample, including age, schooling, nationality, and gender. Use the dropdown menu below to visualize the corresponding graphs. </p>
+          <br> 
+          <select id="dropdown-menu" onchange="if (this.value) document.getElementById('page-container').innerHTML='<iframe src='+this.value+'></iframe>';">
+            <option value="DataStory.html">Age Distribution</option>
+            <option value="gender.html">Gender Distribution</option>
+            <option value="schooling.html">Schooling Statistics</option>
+            <option value="nationality.html">Nationalities</option>
+          </select>
+          
+          <div id="page-container"><iframe src="DataStory.html"></iframe></div>               
         <br>
-        <br>
-        <button>Gender Distribution</button> 
-        <a href="gender.html">Donut Chart</a>
-        <br>
-        <br>
-        <button>Schooling Statistics</button>
-        <a href="schooling.html">Polar Area Chart</a>
-        <br>
-        <br>
-        <button>Nationalities</button>
-        <a href="nationality.html">Bar Chart</a>
-        <br>
-        <p>(My plan is to make these 'block buttons' and add event listeners so that the graphs (that are now just linked next to them) appear on the page depending on whicih button the user clicks.</p>
+        
         </td>
       </tr>
     </table>
-  <img src="resources/7.png" height="200" width="400" class="center">
+  
     <table>
       <tr>
         <td>
+          <img src="resources/7.png" height="200" width="400" class="center">
           <h1>The Main Effect</h1>
           <h2>Do transparency mechanisms influence users' attitude towards OBT?</h2>
           <h3>The Treatment</h3>
@@ -112,35 +143,83 @@
           <p>Attitude towards OBT was measured using two indicators: (a) willingness to share data and (b) trust towards OBT. Willingness to share data measured how willing users were to actually share their personal data in order to use free web services. Trust in OBT measured how much users believed their data was kept safe in this transaction.</p>
           <br>
 
-          <h3>Results</h3>
-          <h3>Below you can see the visual representation of the results</h3>
-          <button>Click here to see the graph for the main effect: Transparency Mechanisms -> Attitude towards OBT</button> <a href="https://codepen.io/sgratzl/pen/QxoLoY">I will use this website to help me make a boxplot to show my data</a>
-          <p>I will use the link above to help me create a boxsplot to show my data. The plan is to also add an event listener to the button so that the graph will pop up only when the user clicks it.</p>
+          <h3>Results: Main Effect</h3>
+          <div id="page-container"><iframe src="mainEffect.html"></iframe></div>  
       </tr>
     </table>
-  <img src="resources/8.png" height="200" width="400" class="center">
+  
     <table>
       <tr>
         <td>
+          <img src="resources/8.png" height="200" width="400" class="center">
           <h1>Mediation</h1>
           <h2>What role does perceived control play in this?</h2>
 
           <h3>What do you mean by perceived control?</h3>
-          <p>Participants were randomly assigned to one of two conditions: (a) experimental or (b) control. The experimental group had to press a link that took them to their own personal Google page where all their personality and behavioral attributes (as identitified by Goiogle) were listed. They were asked to explore the page and return to the questionnaire once they were done. On the other hand, the control group was given a different but comparable link, one to their Google storage manager, and asked to follow the same instructions. Users' attitudes were then measured. </p>
-          <h3>Measuring Attitude towards OBT</h3>
-          <p>Attitude towards OBT was measured using two indicators: (a) willingness to share data and (b) trust towards OBT. Willingness to share data measured how willing users were to actually share their personal data in order to use free web services. Trust in OBT measured how much users believed their data was kept safe in this transaction.</p>
-          <br>
+          <p>Perceived Control wasa variable with the focus the perceived sense of control that being exposed to the online tracking profile might give to respondents in the experimental condition. By having access to this profile, users might feel like they have a little more control over their own data, and this can potentially change ho they feel about OBT (their attitude, namely the willingness they feel to share their data with third companies and their trust in this process). </p>
+         
 
-          <h3>Results</h3>
-          <h3>Below you can see the visual representation of the results of the mediation analysis</h3>
-          <button>Click here to see the graph for: Mediation: Perceived Control</button> <a href="https://docs.anychart.com/Basic_Charts/Network_Graph#individual_edges">I will use this link to help me create a graph to show mediation</a>
-          <p>I will use thel link above to help me create a graph that shows mediation. I will also add an event listener to the button so the graph pops up when the user clicks it.</p>
+          <h3>Results: Mediation Effect</h3>
+          <div id="page-container"><iframe src="mediation.html"></iframe></div> 
 
-          <h1>Click below to see the document with the answers for my Week 9 Submission</h1>
-          <a href="Week9Answers.html">Week 9 Submission</a>
+          
       </tr>
     </table>
+  
+    <table>
+      <tr>
+        <td>
+          <img src="resources/3.png" height="200" width="400" class="center">
+          <h1>Conclusion</h1>
+          <h2>& Recommendations</h2>
+
+          <h3>What can we take from this?</h3>
+          <p> The study shows that having such transparency mechansims, like the Google Profile, provides users with a perception of control over their own private data. However, due to little knowledge on the topic, this data is interpreted as overwhelming and scary (as often, users see that Google knows a lot more about them than they thought). This in turn leads to less willingness to share data. 
+            <br>
+            <br>
+            For transparency mechanisms to indeed give some power to the users and increase their attitudes towards the process of Online Behavioral Targeting, users must be more well educated about how this data is gathered, why it is so accurate and how it is used. Seeing it is there in the profile is not enough - a more comprehensive understanding of how it is used is necessary for users to feel comfortable in being part of this business deal, giving them the full picture of what they are being a part of. 
+            <br>
+            <br>
+Although transparency mechanisms are a start and should be insresingly implemented, education and awareness about the process of OBT must happen simultaenously for such mechanisms to truly have a positive effect on attitude towards Online Behavioral Targeting.</p>
+
+
+
+          
+      </tr>
+    </table>
+  
+
+    <table>
+      <tr>
+        <td>
+          <img src="resources/9.png" height="200" width="400" class="center">
+          <h1>Final Project Resources</h1>
+    
+          <h3>Diary Entries</h3>
+          <p>This page was coded as part of my NM2207 Final Project, where I put together some of the main concepts of HTML, CSS and JavaScriopt that I have learned throughout the course. In this section you will find some diary entries documenting my progress, some of the obstacles I encountered, and how I fixed them. </p>
+         
+    
+          <a href="diaryEntries.html" class="button">
+            Diary Entries
+          </a>
+
+          <h3>Storyboard</h3>
+          <p>Here you will find a storyboard that summarizes the data story in this webpage.</p>
+          <a href="storyBoard.html" class="button">
+            Storyboard
+          </a>
+
+          <h3>Project Report</h3>
+          <p>Finally, below you will find the Final Project Report for this assignment.</p>
+          <a href="finalprojectreport.html" class="button">
+            Final Project
+          </a>
+
+        
+      </tr>
+    </table>
+
   </body>
-  <img src="resources/9.png" height="200" width="400" class="center">
+  
 </html>
 

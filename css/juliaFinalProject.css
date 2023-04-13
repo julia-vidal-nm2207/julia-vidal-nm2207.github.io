@@ -2,4 +2,22 @@
     position: relative;
     height: 80%;
     width: 80%;
-}
+    }  
+
+#page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
+  
+  #page-container iframe {
+    width: 80%;
+    height: 100%;
+    border: none;
+  }
+
+  img.center {
+    display: block;
+    margin: auto;
+  }

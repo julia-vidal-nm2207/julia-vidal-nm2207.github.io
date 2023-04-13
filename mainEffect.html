@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<html>
+  <style>
+    p {
+color: rgb(250, 250, 250);
+font-size: 1em;
+font-family: monospace;
+}
+  </style>
+  <head>
+    <meta charset="UTF-8">
+    <title>Grouped Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+         </script>
+                <link rel="stylesheet" type="text/css" href="css/mainEffect.css">
+                <script defer type="text/javascript" src="appscripts/mainEffect.js">
+                    </script>
+    </script>
+  </head>
+  <body>
+    <canvas id="myChart"></canvas>
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Willingness to Share Data', 'Trust in OBT'],
+          datasets: [{
+            label: 'Experimental Group',
+            data: [3.64, 4.42],
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            borderWidth: 1
+          }, {
+            label: 'Control Group',
+            data: [2.73, 3.25],
+            backgroundColor: 'rgb(54, 162, 235)',
+            borderColor: 'rgb(54, 162, 235)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    </script>
+
+<p>Here, we can see that those in the experimental group (with exposure to the profile) had higher levels in willingness to share data and in trust in OBT when compared to the control group. Being the two indicators of attitude used in this study, this means that being exposed to transparency mechanisms like the Google profile increases the attitudes user's have towards OBT. </p>    
+
+  </body>
+</html>

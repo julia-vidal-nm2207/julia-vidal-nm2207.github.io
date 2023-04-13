@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Diary Entries</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="87fadc5e-dcb0-4b0d-aad4-ff35bff2bf3c" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_4.png" style="object-position:center 90%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/book-closed_blue.svg"/></div><h1 class="page-title">Diary Entries</h1></header><div class="page-body"><p id="02af81de-0128-49ff-adbb-3d7c14a241f5" class="">Final Project NM2207</p><p id="b797741d-54ef-42d0-88c9-8cc25313c01f" class="">Julia Fernandes Vidal, student e1103266</p><p id="7461d9ae-83b7-4adc-b01b-0de7f57890a5" class="">
+</p><h2 id="450f8652-29e1-4a4e-b85d-dd07b77801ad" class="">Week 9:</h2><p id="919791d4-bb7f-477b-ad7b-e02616af49b4" class="">When sitting down to code this first draft of my final project webpage, the only thing I wanted it to look like was like a modern intake on the ‘classic’ or ‘stereotypical’ code design style (dark background, green letters, monospace font). So, this was my first step. Before I could overcomplicate things in my head, I simply added the CSS that I needed to add the colors and sizes that I wanted. I thought of using a template to design my webpage, but I thought that would make it less of my own. Although it could make it look more professional, I wanted this page to be entirely of my own making, so I decided to not use any templates or follow any tutorials online, and instead just coded this from a blank canva.</p><p id="2cd2f2c0-9f91-4b0f-8735-f8cf58c1426c" class="">
+</p><p id="5de04369-633d-47d6-9dad-db0c685fb4cd" class="">I also decided I wanted to have one continuous page, with a vertical flow where the data story continues further down the page, as opposed to one that has multiple different pages. I decided to do this because it would flow better with how I wanted to display my data, and it would also give a ‘smoother’ feel to the data story. </p><p id="d24db6a2-2677-415e-b7fd-56563c82e307" class="">
+</p><p id="b170104e-5e86-4305-bc74-1fc4064cbdeb" class="">However, I soon realized that my page was feeling cramped and unorganized with all the information just in one view. So, I opened W3 schools to explore what alternatives I had to stick to my one-page look but still make it more organized. This is where I remembered that tables can be handy for organizing information into ‘blocks’. So, I organized my webpage with tables, playing around with the colors to make sure it fits my theme and using the margins to give it a ‘cleaner’ look, making the different tables quite a part from each other. In the beginning, I wanted to keep them so far a part you could barely see that there was another table under it at first glance, but I quickly saw it looked confusing. So, I ended up settling for a middle-ground. This part was a lot of just testing with trail and error. </p><p id="59356282-71c7-4c50-a209-aeb805f4767a" class="">
+</p><p id="9c80a354-e4c3-4ba6-a8e5-7c6869dff9d6" class="">I also decided to create the graphs for gender, age, nationality and schooling each in a separate html page. This helped me keep things organized. I used chart.js for most of my charts. Since the data I am using is already my own and I am very familiar with it, making the charts was easier than I expected. </p><p id="f8b6431a-0761-4d88-a628-979ac498c15e" class="">
+</p><p id="7971cbbf-410f-4be2-bd0f-3a07c6e3adb1" class="">When I was coding the chart for the age bar chart, I intially wanted each bar to have a different color, so that is how I coded it. However, when I was done, I saw that the different colors made the chart look very confusing because the colors did not actually stand for anything (it was all just ages). So, I changed everything back to just one color by just copying and pastying the same rgb code repeatedly. For this reason, my code now looks a little bit weird (a lot of repeated rdg codes) unecessarily. Still, I decided to keep it this way just for the sake of doing the same thing in a ‘different way’, and because it was giving me the same result that I wanted anyway.</p><p id="959b4220-f682-4686-b48e-f3c7e4a2449d" class="">
+</p><p id="91794de3-af7c-47c4-a21b-8d078815b685" class="">Furthermore, the hard part that I notice for me is to properly link my CSS, HTML and JavaScript files together. I believe this is an issue with paths and directories. I am solving this by always keeping all html files in the same folder, all css files in the same folder, and all javascript files in the same folder. It is something that required attention as one misplaced file can break the entire code.</p><p id="c977da6d-a111-49c0-b0d3-56b8e59ef577" class="">
+</p><p id="2f8f409f-0b09-49e6-af42-663845f9e139" class="">Finally, I thoguht that adding some images would help me acheive a more ‘modern’ and creative look for this design. So, I went on <a href="http://Canva.com">Canva.com</a> and got some visuals from there. I changed and perfected their colors myself so it would fit my design how I wanted. Still, I was struggling to center them, despite looking up on W3 schools (the solution I was reading, which was to add <code>class=center</code>, was not working). So, I decided to leave this one to solve in the later weeks. The same applies to the buttons. I knew I wanted to add some CSS to them to make them look nicer, and I still needed to add eventlisteners and find a way to keep the graph in that same page (instead of opening a new tab when the button was clicked) so I decided to leave that to figure out in the later weeks.</p><p id="20f48b0b-0243-406f-a20b-a30ae12a6771" class="">
+</p><p id="679517d1-73ad-4282-8a00-f86ba46afd95" class="">Overall, this week I used mainly concepts learned in Week 2, these being the CSS and all the HTML tags. I was setting the groundwork for more elaborate details to come. I also used concepts from Week 7 and Week 8 to actually make the charts I did using chart.js.</p><p id="85c76d7d-87a9-4f38-97b8-dcf5b8bc9172" class="">
+</p><h2 id="df80866f-759c-4e48-b720-c110d439cab0" class="">Week 10:</h2><p id="3503cea2-a2fc-4c49-8f13-731dd522eae5" class="">This week I had to focus on working on the other two graphs I still needed to code. Initially, my plan was to use a boxplot graph to display my main effect (IV: Profile Exposure on DV: Attitude towards OBT). This would mean I would do something we did not learn in class at all. However, I was struggling to understand how that would work. After a quick google search on the best ways to visually display such a relationship, I decided to uncomplicate things in my head and simply make a bar chart. This successfully visualized the differences between groups (experimental vs. control) when it came to the two variables (willingness to share data and trust in OBT). </p><p id="2b07bed5-eea9-4231-8278-5528c348267f" class="">
+</p><p id="7250b345-3bc7-482d-9d56-b7e85bdad1c8" class="">However, it was not so easy with the second graph: the mediation effect of Perceived Control. To show this, I needed to make a graph that resembled a conceptual model, with arros that show the direction of the relationshi and lines that I could alter the thickness so I could show the difference in strength of the relationship. To do this, I had to use a different library for the first time, which was a little bit of a struggle. I had never done a graph like that before and I was struggling with how to organize my data to make it happen. So, to better understand this, I used Chat GPT. I asked Chat GPT to explain how to make a netwotk graph. I decided to use the library <a href="http://unpkg.com/">unpkg.co</a>m as it had the network graph I needed. Although it is not perfect, it serves the job. I also struggled a bit more to add the arrow so that I could see the direction of the relationship, a struggle Chat GPT also helped me with. But still, I thought the graph looked confusing. So, I decided to use color to make the difference in the arrows even more evident, making the positive relatinship green and the negative ones in red. To explore this unknown ground, Chat GPT was quite helpful. </p><p id="36bc4be3-a252-4e77-8bbe-392bd0f7c566" class="">
+</p><p id="dd36240a-33ab-40b7-9b10-22560179e8a6" class="">Here, I used concepts from Week 3, like initializing variables (visible in all my charts), as well as functions to make them work. Concepts from Week 4 were also used, like objects with numbers and strings (also visible in my charts).</p><p id="aabd3d1a-07c4-450c-ad10-8c38d842a18d" class="">
+</p><h2 id="777c1c09-72d0-4e83-b1bc-6a357ac1ae7c" class="">Week 11:</h2><p id="fbec8ac2-faa5-40f7-8a63-2254791d8eda" class="">This week I  wanted to focus on cleaning up the mess I had left previously on my page by centering all my images and find a way to make the buttons function like I wanted. For this, W3 Schools was my go-to resource. Adding ID elements to different aspects of the page helped with to center the images like I wanted. In this point, I corrected the buttons so they themselves had the hyperlink to the graphs (instead of a hyperlink next to them). Here, I used CSS to make the buttons look a little more in line with how the page looks (as opposed to the basic look of a button). However, it still did not make the graphs show up where I wanted - they were still on a separate HTML. This week was a little bit frustrating in that sense, because I kept trying to find ways to do what I wanted and I could not, even when I found things online that told me how to do it. I feel like sometimes there are days where things simply do not flow, and this was this week for me. Whatever I did do, I ended up having to delete because it was not functional or did not look how I wanted. So, I will leave to figure out how to fix the event listeners and find a way to add the graphs to the main page for the next week.</p><p id="2500e4a7-97ce-42da-821c-b2a01f9975fc" class="">
+</p><h2 id="4405e87d-fea4-4efc-99be-a7fd22b557ed" class="">Week 12:</h2><p id="c28e116a-8945-415f-8f63-280c88289b24" class="">This week, my main objective was to finally add the event listeners to the buttons and make sure the graphs showed up where I wanted them to in the page. To do this, I found the easiest way was to assign ID to elements, so that I could not only use them throughout my code but also properly link them through my HTML and JavaScript. Adding ID to elements was a concept learned from Week 4. However, I decided that I did not want buttons anynmore - I wanted to change them into a dropdown menu. I thought this would make it more clear to the user that they had to select one of the views to see the different chart for that specific data. So here, I changed the buttons to a dropdown menu, which would also add some complexity to my project. However, I still was struggling to find a way to make the page show in the main page, as opposed to a separate page. For this, I used Chat GPT to help me. Here I learned that we can sue the <code>page container</code> and <code>iframe</code> function to do that. This was very useful was I used it for every single one of my graphs. I had to play around a bit with the dimensions to make sure it would properly fit my page, but then I found a good size that conversed with the rest of the design.</p><p id="151214ff-98d6-40f3-a501-58b9eec8fc37" class="">
+</p><p id="58a88f10-8b42-4b16-aba5-39f3c15b4108" class="">However, with the combination of the dropdown menu and this page container, there was no ‘default’ graph to show when nothing was selected - which looked odd. So, I chose to make one of the graphs (the age one) a default one, that would show on the page even when nothing from the drop down menu was selected. I also learned how to do this by asking Chat GPT.</p><p id="a03e1358-1cc0-43ec-9df7-7b5dbc30e00c" class="">
+</p><p id="e51d51a2-718c-4a57-a048-798ef09936e1" class="">This week we learned to use the data library D3 to make more advanced graphs. However, since I had already coded all the graphs I needed for my project, I decided to simply keep the graphs I had coded the way they were.</p><p id="b216fa70-9ddd-408b-9fb9-a9af8d488d4a" class="">
+</p><h2 id="bb747532-a229-4795-ad43-c811197e5ebf" class="">Week 13:</h2><p id="db134677-5de0-4fae-97d5-5b56ee08bf37" class="">In this final week, I worked on making final adjustments to my webpage. I read through the content and noticed that the graphs might need a little more context, so I added captions to every graph that further explains what the chart is visually showing. I noticed that one of my graphs (the mediation one) was breaking, and I revisited my code and saw that it was a small error on the <code>src</code> (probably deleted the last letter accidently when I was working on it and did not notice). I keep noticing that this is one of my biggest obstacles when coding: the paths, the sources, connecting all the files together. I usually consider myself to be a relaitely detail-oriented person but <em><em><em><em><em>this </em></em></em></em></em>level is new to me, so it is still something I am getting used to. Other than this, I made some adjustments to the content itself of my data story (added more of context to explain the problem in the introduction, for example). </p><p id="2bc10628-8fb3-410a-93c7-e78ff441c7aa" class="">
+</p><p id="c5db55d1-f9ea-4726-81d1-8a2560073716" class="">Overall, I am happy with my final project. Coding has been a really big challenge for me since the beginning, and although it is not the absolute best and most professional webpage in the world, it is something I made from complete scratch. I am also happy to have decided to use my own data for this project, as it made it more personal to me. Revisitting my thesis, my findings, my discussions, as well as the analysis I had run and the data I had and trying to find a new and different way to visualize this was very special.</p><p id="3a9fcceb-2218-4e26-8b12-dd30165bebb0" class="">
+</p></div></article></body></html>
